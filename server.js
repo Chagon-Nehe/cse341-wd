@@ -1,5 +1,6 @@
 // Import Express
-const express = require("express");
+import express from "express";
+//const express = require("express");
 const app = express();
 const port = 3000;
 import { homeRoute, apiRoute } from "./controllers/lesson1.js";
