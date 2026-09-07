@@ -2,16 +2,13 @@
 const express = require("express");
 const app = express();
 const port = 3000;
+import { homeRoute, apiRoute } from "./controllers/lesson1.js";
 
 // Define a route for the home page
-app.get("/", (req, res) => {
-  res.send("Hello Chawa from Express!");
-});
+app.get("/", homeRoute);
 
 // Define a route for an API or JSON data
-app.get("/api/user", (req, res) => {
-  res.json({ id: 1, name: "Chawa" });
-});
+app.get("/api/user", apiRoute);
 
 // Start the Express server
 app.listen(process.env.port || port, () => {
