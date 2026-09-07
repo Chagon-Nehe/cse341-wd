@@ -1,0 +1,27 @@
+{
+  "name": "cse341-wd",
+  "version": "1.0.0",
+  "description": "school projects and assignments",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon server.js",
+    "gitupdate": "git add . && git commit -m \"update\" && git push"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chagon-Nehe/cse341-wd.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Chagon-Nehe/cse341-wd/issues"
+  },
+  "homepage": "https://github.com/Chagon-Nehe/cse341-wd#readme",
+  "dependencies": {
+    "express": "^5.2.1",
+    "nodemon": "^3.1.14"
+  }
+}
