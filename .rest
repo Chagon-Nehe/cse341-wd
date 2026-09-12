@@ -1,0 +1,25 @@
+# Variables
+@baseUrl = https://cse341-wd.onrender.com
+@contentType = application/json
+@contactId = 6aa30874c89bf30b605747dc
+
+### Get all contacts
+GET {{baseUrl}}/contacts
+Accept: {{contentType}}
+
+
+### Get contact by ID
+GET {{baseUrl}}/contacts/{{contactId}}
+Accept: {{contentType}}
+
+
+
+{
+  "firstName": "Raphael",
+  "lastName": "Kayambakadzanja",
+  "email": "rkayamba@path.com",
+  "favoriteColor": "Blue",
+  "birthday": "1985-03-14"
+}
+
+
