@@ -1,17 +1,25 @@
-// Import Express
+// Import Express and mongodb
+import mongodb from "mongodb";
 import express from "express";
-//const express = require("express");
+// Import the router from routes/index.js
+import router from "./api/routes/index.js";
+import { initDB, getDB } from "./connection.js";
+
+//create an instance of the Express application
 const app = express();
-const port = 3000;
-import { homeRoute, apiRoute } from "./controllers/lesson1.js";
+const port = process.env.PORT || 8080;
 
-// Define a route for the home page
-app.get("/", homeRoute);
+// Use the router for all routes
+app.use("/", router); 
+// Start the server after connecting to MongoDB
+initDB()
+  .then(() => {
+    app.listen(port, () => {
+      console.log(`Server listening at http://localhost:${port}`);
+    });
+  })
+  .catch((error) => {
+    console.error("Failed to start server:", error);
+  });
 
-// Define a route for an API or JSON data
-app.get("/api/user", apiRoute);
-
-// Start the Express server
-app.listen(process.env.port || port, () => {
-  console.log(`Express server listening at http://localhost:${process.env.port || port}`);
-});
+ 
