@@ -1,0 +1,17 @@
+{
+  "env": {
+    "es2021": true,
+    "node": true
+  },
+  "extends": ["airbnb", "prettier"],
+  "plugins": ["prettier"],
+  "rules": {
+    "prettier/prettier": "error",
+    "no-unused-vars": "warn",
+    "no-console": "off"
+  },
+  "parserOptions": {
+    "ecmaVersion": 15,
+    "sourceType": "module"
+  }
+}
