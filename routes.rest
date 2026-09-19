@@ -38,7 +38,6 @@ Content-Type: application/json
 
 ### Delete a contact
 DELETE {{baseUrl}}/contacts/
-
 ### Get all users (if your app uses users instead of contacts)
 GET {{baseUrl}}/users
 

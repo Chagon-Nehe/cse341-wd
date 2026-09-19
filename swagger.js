@@ -5,7 +5,7 @@ const doc = {
     title: 'Contacts API',
     description: 'API for managing contacts'
   },
-  host: 'localhost:8080 ',
+  host: 'localhost:8080',
   schemes: ['http', 'https'],
   definitions: {
     swagger: '2.0.'

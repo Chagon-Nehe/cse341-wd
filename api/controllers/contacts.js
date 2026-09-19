@@ -58,7 +58,13 @@ const updateContact = async (req, res) => {
      #swagger.description = 'Updates a single contact record in MongoDB.'
   */
   const { id } = req.params;
-  const updatedContact = req.body;
+  const updatedContact = {
+    firstName: req.body.firstName,
+    lastName: req.body.lastName,
+    email: req.body.email,
+    favoriteColor: req.body.favoriteColor,
+    birthday: req.body.birthday
+  };
   try {
     const db = getDB();
     const result = await db
