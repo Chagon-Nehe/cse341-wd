@@ -79,6 +79,11 @@ const deleteContact = async (req, res) => {
 
 // Get a contact by ID
 const getContactById = async (req, res) => {
+  /* #swagger.tags = ['Contacts']
+     #swagger.summary = 'Get contact details by ID'
+     #swagger.description = 'Fetches a single contact record from MongoDB.'
+     #swagger.parameters['id'] = { description: 'Contact ID' }
+  */
   const { id } = req.params;
   try {
     const db = getDB();

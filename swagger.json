@@ -1,14 +1,15 @@
 {
   "swagger": "2.0",
   "info": {
-    "title": "My Contacts API",
+    "title": "Contacts API",
     "description": "API for managing contacts",
     "version": "1.0.0"
   },
   "host": "localhost:8080",
   "basePath": "/",
   "schemes": [
-    "http"
+    "http",
+    "https"
   ],
   "paths": {
     "/": {
@@ -130,7 +131,11 @@
         }
       },
       "get": {
-        "description": "",
+        "tags": [
+          "Contacts"
+        ],
+        "summary": "Get contact details by ID",
+        "description": "Fetches a single contact record from MongoDB.",
         "produces": [
           "application/json"
         ],
@@ -139,7 +144,8 @@
             "name": "id",
             "in": "path",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "description": "Contact ID"
           }
         ],
         "responses": {
@@ -154,6 +160,12 @@
           }
         }
       }
+    }
+  },
+  "definitions": {
+    "swagger": {
+      "type": "string",
+      "example": "2.0."
     }
   }
 }

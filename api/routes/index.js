@@ -5,7 +5,7 @@ import {
 } from '../controllers/contacts.js';
 // get swagger documentation route
 import swaggerUi from 'swagger-ui-express';
-import swaggerDocument from '../../swagger.js';
+import swaggerDocument from '../../swagger.json' with { type: 'json' };
 
 const router = Router();
 
