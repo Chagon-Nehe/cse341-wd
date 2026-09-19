@@ -13,7 +13,7 @@ let db;
  * Initializes the MongoDB connection and caches the Db instance.
  * Safe to call multiple times — subsequent calls return the cached db.
  */
-async function initDB(callback) {
+async function initDB() {
   if (db) {
     console.warn('Database is already initialized!');
     return db;

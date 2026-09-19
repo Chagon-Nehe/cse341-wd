@@ -3,3 +3,6 @@ const contactSchema = {
   email: { type: String, required: true },
   phone: { type: String }
 };
+
+// Export the contact schema
+module.exports = contactSchema;

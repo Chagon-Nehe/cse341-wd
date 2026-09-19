@@ -1,0 +1,67 @@
+@baseUrl = http://localhost:8080
+
+### Home
+GET {{baseUrl}}/
+
+### API root
+GET {{baseUrl}}/api
+
+### Get all contacts
+GET {{baseUrl}}/contacts
+
+### Get a single contact
+GET {{baseUrl}}/contacts/
+
+### Create a contact
+POST {{baseUrl}}/contacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Doe",
+  "email": "john.doe@example.com",
+  "favoriteColor": "Blue",
+  "birthday": "1990-01-15"
+}
+
+### Update a contact
+PUT {{baseUrl}}/contacts/
+Content-Type: application/json
+
+{
+  "firstName": "John",
+  "lastName": "Smith",
+  "email": "john.smith@example.com",
+  "favoriteColor": "Green",
+  "birthday": "1990-01-15"
+}
+
+### Delete a contact
+DELETE {{baseUrl}}/contacts/
+
+### Get all users (if your app uses users instead of contacts)
+GET {{baseUrl}}/users
+
+### Get one user
+GET {{baseUrl}}/users/1
+
+### Create a user
+POST {{baseUrl}}/users
+Content-Type: application/json
+
+{
+  "username": "demo-user",
+  "email": "demo@example.com"
+}
+
+### Update a user
+PUT {{baseUrl}}/users/1
+Content-Type: application/json
+
+{
+  "username": "updated-user",
+  "email": "updated@example.com"
+}
+
+### Delete a user
+DELETE {{baseUrl}}/users/1
