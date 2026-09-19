@@ -10,7 +10,7 @@ const homeRoute = (req, res) => {
      #swagger.description = 'Returns a welcome message for the home page.'
   */
   res.send('Welcome to the Home Page!');
-}; 
+};
 // Get all contacts
 const getContacts = async (req, res) => {
   /* #swagger.tags = ['Contacts']

@@ -1,7 +1,11 @@
 import { Router } from 'express';
 import {
-    homeRoute, getContacts,
-    getContactById, createContact, updateContact, deleteContact
+  homeRoute,
+  getContacts,
+  getContactById,
+  createContact,
+  updateContact,
+  deleteContact
 } from '../controllers/contacts.js';
 // get swagger documentation route
 import swaggerUi from 'swagger-ui-express';

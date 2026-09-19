@@ -5,11 +5,11 @@ const doc = {
     title: 'Contacts API',
     description: 'API for managing contacts'
   },
-    host: 'localhost:8080',
-    schemes: ['http', 'https'],
-    definitions: {
-        swagger: '2.0.',
-    }
+  host: 'localhost:8080 ',
+  schemes: ['http', 'https'],
+  definitions: {
+    swagger: '2.0.'
+  }
 };
 
 const outputFile = './swagger.json';
@@ -19,6 +19,5 @@ const routes = ['./api/routes/index.js'];
 root file where the route starts, such as index.js, app.js, routes.js, etc ... */
 
 swaggerAutogen({ ignore: ['./swagger.json'] })(outputFile, routes, doc);
-
 
 export default doc;

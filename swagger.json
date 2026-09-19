@@ -5,18 +5,13 @@
     "description": "API for managing contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:8080 || process.env.RENDER_URL",
+  "host": "https://cse341-wd.onrender.com",
   "basePath": "/",
-  "schemes": [
-    "http",
-    "https"
-  ],
+  "schemes": ["http", "https"],
   "paths": {
     "/": {
       "get": {
-        "tags": [
-          "Home"
-        ],
+        "tags": ["Home"],
         "summary": "Home route",
         "description": "Returns a welcome message for the home page.",
         "responses": {
@@ -29,14 +24,10 @@
 
     "/contacts": {
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get all contacts",
         "description": "Fetches all contact records from MongoDB.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "responses": {
           "200": {
             "description": "OK"
@@ -47,9 +38,7 @@
         }
       },
       "post": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Create a new contact",
         "description": "Creates a new contact record in MongoDB.",
         "parameters": [
@@ -90,9 +79,7 @@
     },
     "/contacts/{id}": {
       "put": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Update contact by ID",
         "description": "Updates a single contact record in MongoDB.",
         "parameters": [
@@ -116,9 +103,7 @@
         }
       },
       "delete": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Delete contact by ID",
         "description": "deletes a single contact record from MongoDB.",
         "parameters": [
@@ -142,14 +127,10 @@
         }
       },
       "get": {
-        "tags": [
-          "Contacts"
-        ],
+        "tags": ["Contacts"],
         "summary": "Get contact details by ID",
         "description": "Fetches a single contact record from MongoDB.",
-        "produces": [
-          "application/json"
-        ],
+        "produces": ["application/json"],
         "parameters": [
           {
             "name": "id",
