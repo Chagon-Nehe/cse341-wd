@@ -5,11 +5,10 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon server.js",
+    "start": "nodemon --ignore swagger.json server.js",
     "gitupdate": "git add . && git commit -m \"update\" && git push",
     "lint": "eslint .",
     "lint:fix": "eslint --fix",
-    "swagger": "swagger-autogen --ignore ./swagger.json ./server.js",
     "format": "prettier --write './**/*.{js,jsx,ts,tsx,css,md,json}' --config ./.prettierrc"
   },
   "repository": {
