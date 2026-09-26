@@ -17,14 +17,25 @@
   "scripts": {
     "test": "node --test",
     "start": "node app.js",
-    "dev": "nodemon app.js"
+    "dev": "node swagger.js && nodemon app.js"
   },
   "dependencies": {
     "dotenv": "^18.0.4",
     "express": "^5.2.1",
-    "mongoose": "^9.10.2"
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "install": "^0.13.0",
+    "mongoose": "^9.10.2",
+    "npm": "^12.1.0",
+    "passport": "^0.7.0",
+    "passport-google-oauth20": "^2.0.0",
+    "swagger-ui-express": "^5.0.1"
   },
   "devDependencies": {
-    "nodemon": "^3.1.14"
+    "nodemon": "^3.1.14",
+    "swagger-autogen": "^2.23.7"
+  },
+  "allowScripts": {
+    "@scarf/scarf@1.4.0": true
   }
 }

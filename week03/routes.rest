@@ -1,0 +1,166 @@
+@host = http://localhost:8081
+
+### Events
+GET {{host}}/api/events
+
+### Get event by ID
+GET {{host}}/api/events/6ab7e78da5179937f530e16f
+
+### Create a new event
+POST {{host}}/api/events
+Content-Type: application/json
+
+{
+  "title": "Campus Tech Expo 2026",
+  "description": "A showcase of student innovation, startups, and technology projects.",
+  "category": "Technology",
+  "date": "2026-10-15",
+  "startTime": "09:00",
+  "endTime": "16:00",
+  "location": "Main Auditorium",
+  "capacity": 300,
+  "organizerId": "64d5d2f8c7a8b9a1d2b0e124",
+  "status": "scheduled"
+}
+
+### Update an event
+PUT {{host}}/api/events/64d5d2f8c7a8b9a1d2b0e123
+Content-Type: application/json
+
+{
+  "title": "Campus Tech Expo 2026 Updated",
+  "description": "Updated event details with keynote speakers and student demos.",
+  "date": "2026-10-16",
+  "status": "confirmed"
+}
+
+### Delete an event
+DELETE {{host}}/api/events/64d5d2f8c7a8b9a1d2b0e123
+
+### Event registrations
+GET {{host}}/api/events/64d5d2f8c7a8b9a1d2b0e123/registrations
+
+### Register attendee for an event
+POST {{host}}/api/events/64d5d2f8c7a8b9a1d2b0e123/register
+Content-Type: application/json
+
+{
+  "studentId": "64d5d2f8c7a8b9a1d2b0e130",
+  "name": "Alice Johnson",
+  "email": "alice.johnson@campus.edu",
+  "ticketType": "standard"
+}
+
+### Students
+GET {{host}}/api/students
+
+### Get student by ID
+GET {{host}}/api/students/64d5d2f8c7a8b9a1d2b0e130
+
+### Create student
+POST {{host}}/api/students
+Content-Type: application/json
+
+{
+  "name": "Alice Johnson",
+  "email": "alice.johnson@campus.edu",
+  "major": "Computer Science",
+  "year": 3,
+  "status": "active"
+}
+
+### Update student
+PUT {{host}}/api/students/64d5d2f8c7a8b9a1d2b0e130
+Content-Type: application/json
+
+{
+  "major": "Software Engineering",
+  "year": 4
+}
+
+### Delete student
+DELETE {{host}}/api/students/64d5d2f8c7a8b9a1d2b0e130
+
+### Volunteers
+GET {{host}}/api/volunteers
+
+### Get volunteer by ID
+GET {{host}}/api/volunteers/64d5d2f8c7a8b9a1d2b0e140
+
+### Create volunteer
+POST {{host}}/api/volunteers
+Content-Type: application/json
+
+{
+  "name": "Michael Smith",
+  "email": "michael.smith@campus.edu",
+  "department": "Student Affairs",
+  "skills": ["Registration", "Logistics", "Audio/Visual"],
+  "availability": "Weekends"
+}
+
+### Update volunteer
+PUT {{host}}/api/volunteers/64d5d2f8c7a8b9a1d2b0e140
+Content-Type: application/json
+
+{
+  "availability": "Weekdays and Weekends",
+  "skills": ["Registration", "Logistics", "Audio/Visual", "Crowd Management"]
+}
+
+### Delete volunteer
+DELETE {{host}}/api/volunteers/64d5d2f8c7a8b9a1d2b0e140
+
+### Event staff assignments
+GET {{host}}/api/events/64d5d2f8c7a8b9a1d2b0e123/volunteers
+
+### Assign volunteer to event
+POST {{host}}/api/events/64d5d2f8c7a8b9a1d2b0e123/volunteers
+Content-Type: application/json
+
+{
+  "volunteerId": "64d5d2f8c7a8b9a1d2b0e140",
+  "role": "Check-in Desk",
+  "shift": "09:00-12:00"
+}
+
+### Schedules
+GET {{host}}/api/schedules
+
+### Create schedule
+POST {{host}}/api/schedules
+Content-Type: application/json
+
+{
+  "eventId": "64d5d2f8c7a8b9a1d2b0e123",
+  "day": "2026-10-15",
+  "sessions": [
+    {
+      "title": "Opening Ceremony",
+      "startTime": "09:30",
+      "endTime": "10:00",
+      "speaker": "Dean Thompson"
+    },
+    {
+      "title": "AI Panel",
+      "startTime": "10:30",
+      "endTime": "11:30",
+      "speaker": "Dr. Lee"
+    }
+  ]
+}
+
+### Notifications
+GET {{host}}/api/notifications
+
+### Send notification
+POST {{host}}/api/notifications
+Content-Type: application/json
+
+{
+  "eventId": "64d5d2f8c7a8b9a1d2b0e123",
+  "recipientType": "student",
+  "recipientId": "64d5d2f8c7a8b9a1d2b0e130",
+  "message": "Your registration for Campus Tech Expo 2026 has been confirmed.",
+  "channel": "email"
+}
