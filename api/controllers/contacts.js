@@ -9,7 +9,14 @@ const homeRoute = (req, res) => {
      #swagger.summary = 'Home route'
      #swagger.description = 'Returns a welcome message for the home page.'
   */
+  try {
+    res.setHeader('Content-Type', 'text/plain');
+  } catch (error) {
+    console.error('Error in home route:', error);
+    res.status(500).send('Internal Server Error');
+  }
   res.send('Welcome to the Home Page!');
+  
 };
 // Get all contacts
 const getContacts = async (req, res) => {
@@ -105,8 +112,12 @@ const getContactById = async (req, res) => {
   /* #swagger.tags = ['Contacts']
      #swagger.summary = 'Get contact details by ID'
      #swagger.description = 'Fetches a single contact record from MongoDB.'
-     #swagger.parameters['id'] = { description: 'Contact ID' }
+     #swagger.parameters['id'] = { description: 'Contact ID' 
   */
+  // validate the ID format
+  if (!req.params.id || !ObjectId.isValid(req.params.id)) {
+    return res.status(400).json({ error: 'Invalid contact ID' });
+  }
   const { id } = req.params;
   try {
     const db = getDB();
