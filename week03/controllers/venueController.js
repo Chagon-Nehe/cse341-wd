@@ -5,6 +5,7 @@ const Venue = require('../models/Venue');
 exports.createVenue = async (req, res) => {
   /*  #swagger.tags = ['Venues']
         #swagger.summary = 'Create a new campus venue'
+         #swagger.security = [{ "googleOAuth": ["profile", "email"] }] 
         #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Venue information payload',

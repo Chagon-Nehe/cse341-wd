@@ -3,8 +3,9 @@ const Event = require('../models/Event');
 // @desc    Create new event
 // @route   POST /api/events
 exports.createEvent = async (req, res) => {
-  /*  #swagger.tags = ['Events']
-        #swagger.summary = 'Create a new campus event with 8 fields'
+  /*   #swagger.tags = ['Events']
+        #swagger.summary = 'Create a new campus event'
+        #swagger.security = [{ "googleOAuth": ["profile", "email"] }] 
         #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Event data details',
@@ -50,7 +51,7 @@ exports.getEvents = async (req, res) => {
 // @route   GET /api/events/:id
 exports.getEvent = async (req, res) => {
   /*  #swagger.tags = ['Events']
-        #swagger.summary = 'Fetch a specific event by ID'
+    
     */
   try {
     const event = await Event.findById(req.params.id).populate('venueId');
@@ -67,6 +68,7 @@ exports.getEvent = async (req, res) => {
 exports.updateEvent = async (req, res) => {
   /*  #swagger.tags = ['Events']
         #swagger.summary = 'Update an existing event by ID'
+        #swagger.security = [{ "googleOAuth": ["profile", "email"] }] 
         #swagger.parameters['obj'] = {
             in: 'body',
             description: 'Fields to update',
@@ -98,6 +100,7 @@ exports.updateEvent = async (req, res) => {
 exports.deleteEvent = async (req, res) => {
   /*  #swagger.tags = ['Events']
         #swagger.summary = 'Delete an existing event by ID'
+        #swagger.security = [{ "googleOAuth": ["profile", "email"] }] 
     */
   try {
     const event = await Event.findByIdAndDelete(req.params.id);
