@@ -8,6 +8,6 @@ exports.ensureAuth = (req, res, next) => {
   return res.status(401).json({
     success: false,
     message: 'Unauthorized. Please log in via OAuth first.',
-    click: `https://cse341-wd-1.onrender.com/auth/google` // Provide a link to initiate OAuth login
+    // click: `https://cse341-wd-1.onrender.com/auth/google` // Provide a link to initiate OAuth login
   });
 };

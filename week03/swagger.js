@@ -9,7 +9,7 @@ const isProduction = process.env.NODE_ENV === 'production';
 
 // Dynamic host binding
 const HOST = isProduction ? 'cse341-wd-1.onrender.com' : 'localhost:8081';
-const SCHEMES = isProduction ? ['https'] : ['http'];
+const SCHEMES = isProduction ? 'https' : 'http';
 const BASE_URL = isProduction ? `https://${HOST}` : `http://${HOST}`;
 
 // Swagger documentation configuration
@@ -28,13 +28,13 @@ const doc = {
     googleOAuth: {
       type: 'oauth2',
       flow: 'accessCode',
-      authorizationUrl: 'https://google.com',
+      authorizationUrl: `${HOST}/auth/google`, // Dynamically switches between http and https',
       tokenUrl: `${BASE_URL}/auth/google/callback`, // Dynamically switches between http and https
-      scopes: {
+        scopes: {
         profile: 'Access your basic profile information',
         email: 'Access your email address'
-      }
-    }
+      },
+    },
   },
 
   definitions: {
