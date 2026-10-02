@@ -8,10 +8,14 @@ const swaggerDocument = require('./swagger-output.json'); // Import the auto-gen
 const connectDB = require('./config/db');
 
 dotenv.config();
-connectDB();
 
 // Load Passport Configuration
 require('./config/passport');
+
+
+connectDB();
+
+
 
 const app = express();
 

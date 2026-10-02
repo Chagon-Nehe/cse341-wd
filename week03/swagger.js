@@ -28,7 +28,7 @@ const doc = {
     googleOAuth: {
       type: 'oauth2',
       flow: 'accessCode',
-      authorizationUrl: `${HOST}/auth/google`, // Dynamically switches between http and https',
+      authorizationUrl: 'https://google.com', // Dynamically switches between http and https',
       tokenUrl: `${BASE_URL}/auth/google/callback`, // Dynamically switches between http and https
         scopes: {
         profile: 'Access your basic profile information',

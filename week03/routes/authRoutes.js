@@ -12,7 +12,6 @@ router.get('/google', (req, res, next) => {
   } else {
     req.session.returnTo = '/'; // Fallback to home root
   }
-
   // Proceed to standard passport authentication
   passport.authenticate('google', { scope: ['profile', 'email'] })(req, res, next);
 });
@@ -24,7 +23,7 @@ router.get(
   passport.authenticate('google', { failureRedirect: '/auth/google' }),
   (req, res) => {
     // Retrieve the stored redirect destination, or default to home root
-    const redirectUrl = req.session.returnTo || '/';
+    const redirectUrl = req.session.returnTo || '/api-docs';
 
     // Clean up the session variable so it doesn't persist unexpectedly
     delete req.session.returnTo;
