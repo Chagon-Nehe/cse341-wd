@@ -7,11 +7,11 @@
   },
   "host": "cse341-wd-1.onrender.com",
   "basePath": "/",
-  "schemes": "http",
+  "schemes": ["http","https"],
   "securityDefinitions": {
     "googleOAuth": {
       "type": "oauth2",
-      "flow": "accessCode",
+      "flow": "implicit",
       "authorizationUrl": "https://google.com",
       "tokenUrl": "http://localhost:8081/auth/google/callback",
       "scopes": {
