@@ -12,8 +12,8 @@
     "googleOAuth": {
       "type": "oauth2",
       "flow": "accessCode",
-      "authorizationUrl": "http://localhost:8081/auth/google",
-      "tokenUrl": "http://localhost:8081/auth/google/callback",
+      "authorizationUrl": "http://cse341-wd-1.onrender.com/auth/google",
+      "tokenUrl": "http://cse341-wd-1.onrender.com/auth/google/callback",
       "scopes": {
         "profile": "Access your basic profile information",
         "email": "Access your email address"
