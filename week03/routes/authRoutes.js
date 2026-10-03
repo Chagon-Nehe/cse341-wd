@@ -8,7 +8,7 @@ router.get('/google', (req, res, next) => {
   // Check if the request originated from the Swagger UI documentation page
   const referer = req.headers.referer || '';
   if (referer.includes('/api-docs')) {
-    req.session.returnTo = '/api-docs';
+    req.session.returnTo = '/auth/google/callback'; // Redirect back to Swagger UI after successful login
   } else {
     req.session.returnTo = '/'; // Fallback to home root
   }
@@ -23,7 +23,7 @@ router.get(
   passport.authenticate('google', { failureRedirect: '/auth/google' }),
   (req, res) => {
     // Retrieve the stored redirect destination, or default to home root
-    const redirectUrl = req.session.returnTo || '/api-docs';
+    const redirectUrl = req.session.returnTo || '/';
 
     // Clean up the session variable so it doesn't persist unexpectedly
     delete req.session.returnTo;

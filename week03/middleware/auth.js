@@ -9,5 +9,5 @@ exports.ensureAuth = (req, res, next) => {
     message: 'Unauthorized. Please log in via OAuth first.',
     
   });
-  return res.redirect('/auth/google'); // Redirect to Google OAuth login if not authenticated
+  //return res.redirect('/auth/google'); // Redirect to Google OAuth login if not authenticated
 };

@@ -40,10 +40,10 @@ app.get('/', ensureAuth, (req, res) => {
   // If the user passes ensureAuth, they are successfully logged in
   res.send(`
         <h1>Welcome to the Campus Event Management API</h1>
-        
+        <p>Logged in successfully as: <strong>${req.user.displayName || req.user.emails[0].value}</strong></p>
         <a href="/api-docs">Go to Interactive Swagger API Documentation</a> | 
         <a href="/auth/logout">Logout</a>
-    `); //<p>Logged in successfully as: <strong>${req.user.displayName || req.user.emails[0].value}</strong></p>
+    `); 
 });
 
 // Dynamically construct the callback URL based on the environment context
