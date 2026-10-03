@@ -9,12 +9,16 @@ const {
   deleteEvent
 } = require('../controllers/eventController');
 
-router.route('/').get(getEvents).post(ensureAuth, createEvent); // Protected!
 
-router
-  .route('/:id')
-  .get(getEvent)
-  .put(ensureAuth, updateEvent) // Protected!
-  .delete(ensureAuth, deleteEvent); // Protected!
-
+try {
+  router.route('/').get(getEvents).post(ensureAuth, createEvent); // Protected!
+  router
+    .route('/:id')
+    .get(getEvent)
+    .put(ensureAuth, updateEvent) // Protected!
+    .delete(ensureAuth, deleteEvent); // Protected!
+} catch (error) {
+  console.error('Error setting up event routes:', error);
+  router.route('/:id').get(getEvent); // Fallback to only GET if there's an error
+}
 module.exports = router;
